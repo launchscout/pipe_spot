@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "lit": "^2.8.0",
+    "phx-live-state": "^0.10.1"
+  }
+}
