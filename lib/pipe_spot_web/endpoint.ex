@@ -1,6 +1,8 @@
 defmodule PipeSpotWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :pipe_spot
 
+  plug CORSPlug
+
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
@@ -12,6 +14,7 @@ defmodule PipeSpotWeb.Endpoint do
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
+  socket "/live_state", PipeSpotWeb.LiveStateSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
